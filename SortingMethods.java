@@ -10,9 +10,7 @@ public class SortingMethods {
        // int array [] = {9,8,7,6,5,4,3,2,1};
         // int array [] = {3,6,4,7,3,1};
  
-        System.out.println("Inital array    : "+ Arrays.toString(array));
         int temp ;
-         int newArr [] = array; 
          for (int k = 0; k < array.length; k++) {
              
              for (int i = 0; i < array.length-1; i++) {
@@ -26,7 +24,7 @@ public class SortingMethods {
 
  
          } 
-         System.out.println("array sorted in ascending order: " + Arrays.toString(newArr));
+     //    System.out.println("array sorted in ascending order: " + Arrays.toString(newArr));
 
     }
 

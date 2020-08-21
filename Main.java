@@ -1,6 +1,7 @@
 import java.util.Arrays;
 import java.util.concurrent.ThreadLocalRandom;
-
+import java.util.Scanner;
+ 
 public class Main {
 
     public static int [] generateNums(int amount){
@@ -35,14 +36,37 @@ public class Main {
          }    }
 
     public static void main(String[] args) {
+        long endTime ;
+        long duration;
+        long startTime;
         long convertToMilliseconds = 1000000;
-        int array [] = generateNums(10000);
-        System.out.println("Generated array : "+ Arrays.toString(array));
-        long startTime = System.nanoTime();
-        SortingMethods.sort(array);
-        long endTime = System.nanoTime();
-        long duration = (endTime - startTime);
-        System.out.println(duration/convertToMilliseconds);
+        long convertToSeconds = 1000000000;
+        int randomNumbers = 50000;
+       // int array [] = generateNums(randomNumbers);
+        Scanner input = new Scanner(System.in);
+        System.out.println("Hi ! want to run the sorting algorithm ? Press 1 to continue");
+        int choice = input.nextInt();
+        boolean flag = true;
+        while(flag == true){
+         
+        if(choice == 1){
+            int array [] = generateNums(randomNumbers);
+            System.out.println("Thinking...");
+            startTime = System.nanoTime();
+            SortingMethods.sort(array);
+            endTime = System.nanoTime();
+    
+            duration = (endTime - startTime);
+            System.out.println("This algorithm took " + duration/convertToMilliseconds + " ms to sort " + randomNumbers + " integers");
+            System.out.println("Press 1 to go again ");
+            choice = input.nextInt();
+        }else{
+            System.out.println("Byebye! ");
+            flag = false;
+            input.close();
+
+        }}
+
     }
  
           
