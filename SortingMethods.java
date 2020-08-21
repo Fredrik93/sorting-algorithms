@@ -1,15 +1,9 @@
-import java.util.Arrays;
-import java.util.Random;
-import java.util.stream.IntStream;
 
 
 public class SortingMethods {
 
     public static void sort(int array []){
 
-       // int array [] = {9,8,7,6,5,4,3,2,1};
-        // int array [] = {3,6,4,7,3,1};
- 
         int temp ;
          for (int k = 0; k < array.length; k++) {
              
@@ -28,10 +22,6 @@ public class SortingMethods {
 
     }
 
-    public static int randomNums(){
-        int array [] = new int [10]; 
-        array[0] = (int) Math.random() * (10);
-        return 1;
-    }
+  
 
 }
