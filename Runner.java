@@ -7,15 +7,10 @@ public class Runner {
         long endTime;
         long duration;
         long startTime;
-        long convertToMilliseconds = 1000000;
-      //  long convertToSeconds = 1000000000;
-        int [] copiedArray =  GenerateNumbers.scanFile();
-       // System.out.println("unsorted : " + Arrays.toString(copiedArray));
+        int [] array =  GenerateNumbers.scanFile();
         int [] testArray = {10,5,1,4,2,3,6,8,7,9};
 // int array [] = generateNums(randomNumbers);
         Scanner input = new Scanner(System.in);
-
-    
         boolean endProgram = false;
    
         while(endProgram != true){
@@ -27,26 +22,28 @@ public class Runner {
             System.out.println("Press 9 to exit");
             System.out.println("");
             String choice = input.nextLine();
+            array = GenerateNumbers.scanFile();
 
                 switch (choice) {
                     case "1":
-                    System.out.println("before: " +  Arrays.toString(testArray));
+                    System.out.println("before: " +  Arrays.toString(array));
                     startTime = System.currentTimeMillis();
-                    SortingMethods.SwapNumbersNextToEachother(testArray);
+                    SortingMethods.SwapNumbersNextToEachother(array);
                     endTime = System.currentTimeMillis();
                     duration = (endTime - startTime);
-                    System.out.println("After: "+ Arrays.toString(testArray));
-                    System.out.println("The algorithm took " + duration + " millisecond(s) to sort the array");
+                    System.out.println("After: "+ Arrays.toString(array));
+                    System.out.println("The algorithm took " + duration + " millisecond(s) to sort " + amountOfIntegersInTxtFile + " integers" );
 
                     break;
                     case "2": 
-                    System.out.println("before: " +  Arrays.toString(testArray));
-                    startTime = System.nanoTime();
-                    SortingMethods.SwapNumbersNextToEachother(testArray);
-                    endTime = System.nanoTime();
+                    System.out.println("before: " +  Arrays.toString(array));
+                    startTime = System.currentTimeMillis();
+                    SortingMethods.reallyFastSort(array);
+                    endTime = System.currentTimeMillis();
                     duration = (endTime - startTime);
-                    System.out.println("After: "+ Arrays.toString(testArray));
-                    System.out.println("The algorithm took " + duration + " nanoseconds(s) to sort the array");
+                    System.out.println("After: "+ Arrays.toString(array));
+                    System.out.println(" ");
+                    System.out.println("The algorithm took " + duration + " millisecond(s) to sort " + amountOfIntegersInTxtFile + " integers" );
                     break;
                     
                     case "9":
