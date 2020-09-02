@@ -1,6 +1,5 @@
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 
@@ -31,6 +30,7 @@ private  static int amountOfIntegersInTxtFile = 24002;
         }
         } catch (FileNotFoundException e) {
             e.printStackTrace();
+            System.out.println("*** Something went wrong. Check if the filename is correct ***");
         }
         return numbers;
     }
