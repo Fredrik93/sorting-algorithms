@@ -17,6 +17,7 @@ public class Runner {
 
     
         boolean endProgram = false;
+   
         while(endProgram != true){
             System.out.println(" ");
             System.out.println("Hi ! Enter a number to choose sorting algorithm: ");
@@ -25,25 +26,40 @@ public class Runner {
             System.out.println("3. Swap first and last number");
             System.out.println("Press 9 to exit");
             System.out.println("");
-            int choice = input.nextInt();
-        switch (choice) {
-            case 1:
-                System.out.println("nr 1");
-                break;
-            case 2: 
-            System.out.println("before: " +  Arrays.toString(testArray));
+            String choice = input.nextLine();
 
-            SortingMethods.SwapNumbersNextToEachother(testArray);
-            System.out.println("After: "+ Arrays.toString(testArray));
-            break;
-            case 9:
-            System.out.println("Byebye! ");
-            System.out.println(" ");
-            endProgram = true;
-            break;
-            default:
-                break;
-        }
+                switch (choice) {
+                    case "1":
+                    System.out.println("before: " +  Arrays.toString(testArray));
+                    startTime = System.currentTimeMillis();
+                    SortingMethods.SwapNumbersNextToEachother(testArray);
+                    endTime = System.currentTimeMillis();
+                    duration = (endTime - startTime);
+                    System.out.println("After: "+ Arrays.toString(testArray));
+                    System.out.println("The algorithm took " + duration + " millisecond(s) to sort the array");
+
+                    break;
+                    case "2": 
+                    System.out.println("before: " +  Arrays.toString(testArray));
+                    startTime = System.nanoTime();
+                    SortingMethods.SwapNumbersNextToEachother(testArray);
+                    endTime = System.nanoTime();
+                    duration = (endTime - startTime);
+                    System.out.println("After: "+ Arrays.toString(testArray));
+                    System.out.println("The algorithm took " + duration + " nanoseconds(s) to sort the array");
+                    break;
+                    
+                    case "9":
+                    System.out.println("Byebye! ");
+                    System.out.println(" ");
+                    endProgram = true;
+                    break;
+                    default:
+                    System.out.println("**** Enter a valid key please **** ");
+                        break;
+                }
+         
+       
     }
 
 
