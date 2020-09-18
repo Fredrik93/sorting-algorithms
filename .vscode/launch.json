@@ -6,6 +6,13 @@
     "configurations": [
         {
             "type": "java",
+            "name": "CodeLens (Launch) - BattleMain",
+            "request": "launch",
+            "mainClass": "battleships.BattleMain",
+            "projectName": "sorting_6630370e"
+        },
+        {
+            "type": "java",
             "name": "Debug (Launch) - Current File",
             "request": "launch",
             "mainClass": "${file}"

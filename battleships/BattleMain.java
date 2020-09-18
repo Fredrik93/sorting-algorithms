@@ -14,13 +14,29 @@ class BattleMain {
 
     // ask the user to enter a number between 1 & 5 where the boat might be . the boat is 1 box 'large'
         Scanner userInput = new Scanner(System.in);
-        String choice = userInput.nextLine();
-        System.out.println(choice);
-    //if they guess correctly then send a message 'you sunk a ship!'
-    // if they miss then send a message " you missed!"
-    //if the missed two times then they loose the game 
+        int miss = 0;
+        int hits = 0;
+        while(miss < 4 && hits < 2){
+        System.out.println("To try to hit a ship, enter a number between 0 & 4");
+        int choice = userInput.nextInt();
+            //if they guess correctly then send a message 'you sunk a ship!'
+        if(boatArray[choice] != "Miss"){
+            System.out.println("Holy smokes you sunk a ship! Nice! ");
+            hits ++;
+        }
+            // if they miss then send a message " you missed!"
+       else if(boatArray[choice] == "Miss"){
+         miss ++;
+         System.out.println("Oh dang you missed. " + miss + " misses so far ");
+        }
+    //if they missed two times then they loose the game 
     // if they hit all the ships then they win 
 
-
+    }
+    if(miss == 4){
+    System.out.println("Snap you missed 4 times and lost the game. Try again looser");
+    }else if(hits == 2){
+        System.out.println("WOOH you sunk all the ships and won the game!");
+    }
 }
 }
